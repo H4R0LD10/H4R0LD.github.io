@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi niñita bella</title>
+    <link rel="stylesheet" href="estilo1.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mi amor por ti Araceli</h1>
+        <p class="text">Desde el momento en que te conocí Araceli, mi mundo se llenó de estrellas. Eres mi universo, mi razón para sonreír cada día.</p>
+        <p class="text">Tu risa ilumina mi corazón como un amanecer, y cada momento contigo es como un sueño del que nunca quiero despertar.</p>
+        <button onclick="irAPagina2()">Quiero decirte algo más...</button>
+    </div>
+    <script>
+        function irAPagina2() {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                window.location.href = 'pagina2.html';
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 150vh;
+    background: linear-gradient(135deg, #2b2b52, #4834d4);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+canvas#stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    font-size: 4.5em;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.poem {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.poem p {
+    margin: 10px 0;
+    opacity: 0;
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+.poem p:nth-child(1) { animation-delay: 0.2s; }
+.poem p:nth-child(2) { animation-delay: 0.4s; }
+.poem p:nth-child(3) { animation-delay: 0.6s; }
+
+.image-container {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto 40px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    animation: fadeIn 2s ease-in-out;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.footer-content a {
+    color: #ff9ff3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+    color: #ff4d4d;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3em;
+    }
+    p {
+        font-size: 1.5em;
+    }
+    .poem {
+        font-size: 1.2em;
+    }
+    .image-container {
+        width: 80vw;
+        height: 80vw;
+        max-width: 400px;
+        max-height: 400px;
+    }
+}

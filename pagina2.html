@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te amo mi niñita bella</title>
+    <link rel="stylesheet" href="estilo2.css">
+</head>
+<body>
+    <div class="main-content">
+        <div class="container">
+            <h1>Te amo Araceli Vilca Chachi</h1>
+            <h3>Mi amor por ti es más grande que el universo mismo, infinito y eterno.</h3>
+            <div class="poem">
+                <p>El 5 de mayo de 2024, cuando nuestras almas se cruzaron, un agujero negro fue capturado, su misterio nos envolvió.</p>
+                <p>Como él, tu amor me atrae, con una fuerza sin fin, un abismo de ternura, donde mi corazón cayó sin fin.</p>
+                <p>Eres mi horizonte de eventos, mi luz en la oscuridad, mi universo eterno, mi hogar, mi realidad.</p>
+            </div>
+            <div class="image-container">
+                <img src="img/nasa.jpg" alt="Una foto de un agujero negro para mi amor">
+            </div>
+            <canvas id="stars"></canvas> 
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('stars');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const stars = [];
+        for (let i = 0; i < 100; i++) {
+            stars.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 2,
+                opacity: Math.random(),
+                speed: Math.random() * 0.5 + 0.1
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            stars.forEach(star => {
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+                ctx.fill();
+                star.opacity += star.speed / 100;
+                if (star.opacity > 1 || star.opacity < 0) star.speed = -star.speed;
+            });
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Nuestro Amor Eterno. Todos los derechos reservados.</p>
+            <p>Inspirado por las maravillas del universo. Amor descubre la pagina aqui: 
+                <a href="https://apod.nasa.gov/apod/ap240505.html" target="_blank" rel="noopener noreferrer">PAGINA DE LA NASA</a>
+            </p>
+            <p>Y si no te carga,yo le tome captura de pantalla cambiandole el estilo en la web para mi chistosita aqui:
+                <a href="img/5mayo.png" target="_blank" rel="noopener noreferrer">MI CAPTURA DE PANTALLA</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
